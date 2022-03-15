@@ -19,3 +19,5 @@
 /src/Wizard.Utils/obj/
 /src/Wizard.Api/Registrations.*
 /obj/
+/src/Wizard.Client/node_modules
+/src/Wizard.Client/.angular

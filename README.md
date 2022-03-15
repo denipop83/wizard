@@ -7,7 +7,8 @@ To debug application in VS or Rider, just hit `F5`, it will start backend servic
 SPAProxy.
 
 To test application in "production" mode (release assemblies, static files, containerized)
- run `docker-compose up` in solution root, docker daemon should be installed and started.
+run `docker-compose up` in solution root, docker daemon should be installed and started.
+After launching all containers, you can access frontend page on address (http://localhost:8080)
 
 ### Used technologies
 - .Net 6
