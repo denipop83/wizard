@@ -1,0 +1,38 @@
+<form #form="ngForm" [mustMatch]="['password', 'confirmPassword']" novalidate>
+  <div>
+    <input
+      #loginInput="ngModel"
+      name="loginInput"
+      type="text"
+      placeholder="name@domain.com"
+      test
+      [(ngModel)]="loginInfo.login"
+      validateEmail
+    />
+    <div *ngIf="showErrors && loginInput.errors?.['notEmail']">Login must be a valid email.</div>
+  </div>
+
+  <div>
+    <input
+      #password="ngModel"
+      name="password"
+      type="password"
+      [(ngModel)]="loginInfo.password"
+      validatePass
+    />
+    <div *ngIf="showErrors && password.errors?.['weakPass']">Password must contain min 1 digit and min 1 uppercase
+      letter
+    </div>
+  </div>
+
+  <div>
+    <input
+      #confirmPassword="ngModel"
+      name="confirmPassword"
+      type="password"
+      [(ngModel)]="confirmedPassword"
+    />
+    <div *ngIf="showErrors && confirmPassword.errors?.['mustMatch']">Confirm password must be the same with password.
+    </div>
+  </div>
+</form>

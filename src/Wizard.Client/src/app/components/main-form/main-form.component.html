@@ -1,0 +1,23 @@
+<div class="form-page-container">
+  <div class="step-page-container">
+    <div class="form-step">
+      <ng-container [ngSwitch]="currentStep">
+        <ng-container *ngSwitchCase="'0'">
+          <app-login-component [loginInfo]="loginInfo" [validate]="eventsSubject.asObservable()"></app-login-component>
+        </ng-container>
+        <ng-container *ngSwitchCase="'1'">
+          <app-country-component [countryInfo]="countryInfo"
+                                 [validate]="eventsSubject.asObservable()"></app-country-component>
+        </ng-container>
+        <ng-container *ngSwitchCase="'2'">
+          <app-success></app-success>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+  <button *ngIf="!isCompleted()" (click)="onNextStep()"> {{ showButtonLabel() }}
+  </button>
+
+  <div *ngIf="addRegistrationError">{{ addRegistrationError }}</div>
+  <div></div>
+</div>
